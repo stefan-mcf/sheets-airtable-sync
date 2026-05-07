@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-05-01T10:00:00",
+    "email": "lead1@example.com",
+    "request_type": "Sheets cleanup",
+    "budget": "500",
+    "notes": "Needs dedupe"
+  },
+  {
+    "timestamp": "2026-05-02",
+    "email": "lead2@example.com",
+    "request_type": "Airtable sync",
+    "budget": "$1,200",
+    "notes": "Webhook later"
+  },
+  {
+    "timestamp": "2026-05-02",
+    "email": "lead2@example.com",
+    "request_type": "Airtable sync",
+    "budget": "$1,200",
+    "notes": "duplicate"
+  },
+  {
+    "timestamp": "bad-date",
+    "email": "lead3@example.com",
+    "request_type": "Migration",
+    "budget": "300",
+    "notes": "reject bad date"
+  }
+]

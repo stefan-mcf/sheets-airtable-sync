@@ -1,0 +1,21 @@
+{
+  "name": "Sheets Airtable Sync fixture blueprint",
+  "modules": [
+    {
+      "type": "watch_rows",
+      "provider": "google-sheets-fixture"
+    },
+    {
+      "type": "http",
+      "url": "http://127.0.0.1:8014/sync/preview"
+    },
+    {
+      "type": "airtable-upsert-preview"
+    },
+    {
+      "type": "notification-preview"
+    }
+  ],
+  "fixture_safe": true,
+  "live_services_used": false
+}

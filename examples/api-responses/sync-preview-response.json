@@ -1,0 +1,156 @@
+{
+  "accepted_rows": [
+    {
+      "fields": {
+        "Company": "StackCRM",
+        "Email": "omar@example.com",
+        "Estimated Value": "8100.00",
+        "Name": "Omar Patel",
+        "Phone": "5552223333",
+        "Status": "active"
+      },
+      "fixture_safe": true,
+      "live_services_used": false,
+      "merge_key": "omar@example.com",
+      "row_number": 2,
+      "scenario": "crm-leads",
+      "synthetic_data_only": true
+    },
+    {
+      "fields": {
+        "Company": "River Ops",
+        "Email": "mia@example.com",
+        "Estimated Value": "4200.00",
+        "Name": "Mia Chen",
+        "Phone": "",
+        "Status": "new"
+      },
+      "fixture_safe": true,
+      "live_services_used": false,
+      "merge_key": "mia@example.com",
+      "row_number": 3,
+      "scenario": "crm-leads",
+      "synthetic_data_only": true
+    }
+  ],
+  "airtable_upserts": [
+    {
+      "fields": {
+        "Company": "StackCRM",
+        "Email": "omar@example.com",
+        "Estimated Value": "8100.00",
+        "Name": "Omar Patel",
+        "Phone": "5552223333",
+        "Status": "active"
+      },
+      "fixture_safe": true,
+      "idempotency_key": "crm-leads:omar@example.com:30531ea7b89213d2",
+      "live_services_used": false,
+      "merge_on_fields": [
+        "Email"
+      ],
+      "operation": "upsert",
+      "record_id": "crm-leads:omar@example.com",
+      "synthetic_data_only": true,
+      "system": "airtable"
+    },
+    {
+      "fields": {
+        "Company": "River Ops",
+        "Email": "mia@example.com",
+        "Estimated Value": "4200.00",
+        "Name": "Mia Chen",
+        "Phone": "",
+        "Status": "new"
+      },
+      "fixture_safe": true,
+      "idempotency_key": "crm-leads:mia@example.com:0c09a1057fbc01b8",
+      "live_services_used": false,
+      "merge_on_fields": [
+        "Email"
+      ],
+      "operation": "upsert",
+      "record_id": "crm-leads:mia@example.com",
+      "synthetic_data_only": true,
+      "system": "airtable"
+    }
+  ],
+  "audit_log": [
+    {
+      "decision": "rejected",
+      "live_services_used": false,
+      "reason_code": "unsafe_formula_cell",
+      "row_number": 1,
+      "scenario": "crm-leads"
+    },
+    {
+      "decision": "accepted",
+      "live_services_used": false,
+      "reason_code": null,
+      "row_number": 2,
+      "scenario": "crm-leads"
+    },
+    {
+      "decision": "accepted",
+      "live_services_used": false,
+      "reason_code": null,
+      "row_number": 3,
+      "scenario": "crm-leads"
+    },
+    {
+      "decision": "rejected",
+      "live_services_used": false,
+      "reason_code": "invalid_email",
+      "row_number": 4,
+      "scenario": "crm-leads"
+    }
+  ],
+  "duplicate_rows": [],
+  "fixture_safe": true,
+  "handoff_notes": "Review rejected rows, then apply upserts only after Airtable access is approved.",
+  "live_services_used": false,
+  "rejected_rows": [
+    {
+      "original": {
+        "company": "River Ops",
+        "customer_name": "Mia Chen",
+        "email": "MIA@example.com",
+        "estimated_value": "$4,200",
+        "phone": "+1 555 100 2000",
+        "status": "New Lead"
+      },
+      "reason": "unsafe_formula_cell: phone",
+      "reason_code": "unsafe_formula_cell",
+      "row_number": 1,
+      "scenario": "crm-leads",
+      "suggested_remediation": "Replace spreadsheet formulas with literal values before export."
+    },
+    {
+      "original": {
+        "company": "Broken Co",
+        "customer_name": "Bad Lead",
+        "email": "not-an-email",
+        "estimated_value": "100",
+        "status": "new"
+      },
+      "reason": "invalid_email: email",
+      "reason_code": "invalid_email",
+      "row_number": 4,
+      "scenario": "crm-leads",
+      "suggested_remediation": "Correct the email address before retrying the row."
+    }
+  ],
+  "risk_notes": [
+    "Fixture-safe preview only; no Google Sheets or Airtable network calls were made.",
+    "Airtable performUpsert merge fields must be verified against the live base before use."
+  ],
+  "scenario": "crm-leads",
+  "summary_counts": {
+    "accepted": 2,
+    "conflicts": 0,
+    "duplicates": 0,
+    "rejected": 2,
+    "upserts": 2
+  },
+  "synthetic_data_only": true
+}

@@ -1,0 +1,22 @@
+{
+  "name": "sheets-airtable-sync",
+  "title": "Sheets Airtable Sync",
+  "description": "Fixture-safe Google Sheets to Airtable automation proof with validation, normalization, dedupe, mock upserts, reports, API, MCP, executor, and handoff templates.",
+  "private": false,
+  "fixture_safe": true,
+  "live_services_used": false,
+  "synthetic_data_only": true,
+  "category": "data-platform-sync",
+  "topics": [
+    "google-sheets",
+    "airtable",
+    "automation",
+    "data-cleaning",
+    "workflow-automation",
+    "make",
+    "zapier",
+    "n8n",
+    "google-apps-script"
+  ],
+  "automation_kit_relationship": "Concrete companion proof repo; Automation Kit remains the reusable local proof framework."
+}

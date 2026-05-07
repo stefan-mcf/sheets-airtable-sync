@@ -1,0 +1,10 @@
+{
+  "trigger": "new_sheet_row_fixture",
+  "steps": [
+    "formatter_normalize",
+    "webhook_to_local_preview_api",
+    "airtable_upsert_preview"
+  ],
+  "fixture_safe": true,
+  "live_services_used": false
+}

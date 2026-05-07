@@ -1,0 +1,43 @@
+{
+  "scenario": "project-tracker",
+  "description": "Project tracker rows to Airtable delivery table",
+  "merge_key_fields": [
+    "Project ID"
+  ],
+  "fields": [
+    {
+      "source_field": "project_id",
+      "target_field": "Project ID",
+      "transform": "text",
+      "required": true,
+      "merge_key": true
+    },
+    {
+      "source_field": "task",
+      "target_field": "Task",
+      "transform": "text",
+      "required": true
+    },
+    {
+      "source_field": "owner",
+      "target_field": "Owner",
+      "transform": "text"
+    },
+    {
+      "source_field": "status",
+      "target_field": "Status",
+      "transform": "status",
+      "default": "todo"
+    },
+    {
+      "source_field": "due_date",
+      "target_field": "Due Date",
+      "transform": "date"
+    },
+    {
+      "source_field": "tags",
+      "target_field": "Tags",
+      "transform": "multi_select"
+    }
+  ]
+}

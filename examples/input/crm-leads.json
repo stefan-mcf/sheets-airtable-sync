@@ -1,0 +1,32 @@
+[
+  {
+    "customer_name": "Mia Chen",
+    "email": "MIA@example.com",
+    "company": "River Ops",
+    "status": "New Lead",
+    "estimated_value": "$4,200",
+    "phone": "+1 555 100 2000"
+  },
+  {
+    "customer_name": "Omar Patel",
+    "email": "omar@example.com",
+    "company": "StackCRM",
+    "status": "Won",
+    "estimated_value": "8100",
+    "phone": "555-222-3333"
+  },
+  {
+    "customer_name": "Mia Chen",
+    "email": "mia@example.com",
+    "company": "River Ops",
+    "status": "New Lead",
+    "estimated_value": "4200"
+  },
+  {
+    "customer_name": "Bad Lead",
+    "email": "not-an-email",
+    "company": "Broken Co",
+    "status": "new",
+    "estimated_value": "100"
+  }
+]

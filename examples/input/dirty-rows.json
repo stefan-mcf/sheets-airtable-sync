@@ -1,0 +1,25 @@
+[
+  {
+    "customer_name": " Alice Ng ",
+    "email": "ALICE@example.com",
+    "company": "Northwind",
+    "status": "New",
+    "estimated_value": "1000",
+    "phone": "(555) 0100"
+  },
+  {
+    "customer_name": "Alice Ng",
+    "email": "alice@example.com",
+    "company": "Northwind",
+    "status": "new",
+    "estimated_value": "1000",
+    "phone": "5550100"
+  },
+  {
+    "customer_name": "No Email",
+    "email": "",
+    "company": "Acme",
+    "status": "active",
+    "estimated_value": "250"
+  }
+]

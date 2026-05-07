@@ -1,0 +1,18 @@
+{
+  "automation_kit_available": false,
+  "capabilities": [
+    "schema-validation",
+    "row-normalization",
+    "dedupe",
+    "airtable-upsert-preview",
+    "dead-letter-reporting",
+    "local-api",
+    "mcp-tools",
+    "executor-adapter"
+  ],
+  "fixture_safe": true,
+  "live_services_used": false,
+  "package": "sheets-airtable-sync",
+  "sector": "data-platform-sync",
+  "synthetic_data_only": true
+}

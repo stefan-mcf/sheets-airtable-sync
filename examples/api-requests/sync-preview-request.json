@@ -1,0 +1,4 @@
+{
+  "input_path": "examples/input/crm-leads.json",
+  "mapping_path": "configs/mappings/leads-to-airtable.json"
+}

@@ -1,0 +1,46 @@
+{
+  "scenario": "shopify-orders",
+  "description": "Shopify export rows to Airtable order table",
+  "merge_key_fields": [
+    "Order ID"
+  ],
+  "fields": [
+    {
+      "source_field": "order_id",
+      "target_field": "Order ID",
+      "transform": "text",
+      "required": true,
+      "merge_key": true
+    },
+    {
+      "source_field": "customer_email",
+      "target_field": "Customer Email",
+      "transform": "email",
+      "required": true
+    },
+    {
+      "source_field": "sku",
+      "target_field": "SKU",
+      "transform": "text",
+      "required": true
+    },
+    {
+      "source_field": "total",
+      "target_field": "Total",
+      "transform": "currency",
+      "required": true
+    },
+    {
+      "source_field": "paid",
+      "target_field": "Paid",
+      "transform": "boolean",
+      "default": false
+    },
+    {
+      "source_field": "order_date",
+      "target_field": "Order Date",
+      "transform": "date",
+      "required": true
+    }
+  ]
+}

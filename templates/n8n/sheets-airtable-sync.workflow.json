@@ -1,0 +1,20 @@
+{
+  "name": "Sheets Airtable Sync Fixture",
+  "nodes": [
+    {
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger"
+    },
+    {
+      "name": "Local Preview API",
+      "type": "n8n-nodes-base.httpRequest"
+    },
+    {
+      "name": "Airtable Shape",
+      "type": "n8n-nodes-base.set"
+    }
+  ],
+  "connections": {},
+  "fixture_safe": true,
+  "live_services_used": false
+}

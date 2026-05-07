@@ -1,0 +1,13 @@
+name: sheets-airtable-sync
+fixture_safe: true
+live_services_used: false
+commands:
+  health: ./executor.sh health
+  validate: ./executor.sh validate crm-leads
+  preview: ./executor.sh preview crm-leads
+  report: ./executor.sh report crm-leads
+  verify: ./executor.sh verify
+live_mode_gate:
+  required_env:
+    - SHEETS_AIRTABLE_SYNC_LIVE_SERVICES=true
+    - SHEETS_AIRTABLE_SYNC_EXPLICIT_LIVE_APPROVAL=true

@@ -1,0 +1,40 @@
+{
+  "scenario": "google-form-responses",
+  "description": "Google Forms / Sheets response rows to Airtable intake table",
+  "merge_key_fields": [
+    "Email",
+    "Submitted At"
+  ],
+  "fields": [
+    {
+      "source_field": "timestamp",
+      "target_field": "Submitted At",
+      "transform": "date",
+      "required": true,
+      "merge_key": true
+    },
+    {
+      "source_field": "email",
+      "target_field": "Email",
+      "transform": "email",
+      "required": true,
+      "merge_key": true
+    },
+    {
+      "source_field": "request_type",
+      "target_field": "Request Type",
+      "transform": "select",
+      "required": true
+    },
+    {
+      "source_field": "budget",
+      "target_field": "Budget",
+      "transform": "currency"
+    },
+    {
+      "source_field": "notes",
+      "target_field": "Notes",
+      "transform": "text"
+    }
+  ]
+}

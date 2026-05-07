@@ -1,0 +1,14 @@
+services:
+  sheets-airtable-sync-api:
+    build: .
+    command: python -m uvicorn sheets_airtable_sync.api:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8014:8000"
+    environment:
+      SHEETS_AIRTABLE_SYNC_ENV: local-fixture
+      SHEETS_AIRTABLE_SYNC_LIVE_SERVICES: "false"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health').read()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

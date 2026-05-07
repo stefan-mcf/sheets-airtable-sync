@@ -1,0 +1,1 @@
+"""Fixture-safe client abstractions."""

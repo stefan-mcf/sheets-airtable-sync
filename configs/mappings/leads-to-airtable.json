@@ -1,0 +1,44 @@
+{
+  "scenario": "crm-leads",
+  "description": "CRM/GHL/HubSpot-style lead cleanup to Airtable contacts",
+  "merge_key_fields": [
+    "Email"
+  ],
+  "fields": [
+    {
+      "source_field": "customer_name",
+      "target_field": "Name",
+      "transform": "text",
+      "required": true
+    },
+    {
+      "source_field": "email",
+      "target_field": "Email",
+      "transform": "email",
+      "required": true,
+      "merge_key": true
+    },
+    {
+      "source_field": "company",
+      "target_field": "Company",
+      "transform": "text"
+    },
+    {
+      "source_field": "status",
+      "target_field": "Status",
+      "transform": "status",
+      "default": "new"
+    },
+    {
+      "source_field": "estimated_value",
+      "target_field": "Estimated Value",
+      "transform": "currency",
+      "default": "0"
+    },
+    {
+      "source_field": "phone",
+      "target_field": "Phone",
+      "transform": "phone"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "project_id": "PRJ-001",
+    "task": "Map Airtable fields",
+    "owner": "Ava",
+    "status": "In Progress",
+    "due_date": "2026-05-10",
+    "tags": "airtable, mapping"
+  },
+  {
+    "project_id": "PRJ-002",
+    "task": "Client review",
+    "owner": "Ben",
+    "status": "todo",
+    "due_date": "10/05/2026",
+    "tags": "handoff"
+  },
+  {
+    "project_id": "PRJ-001",
+    "task": "Duplicate project",
+    "owner": "Ava",
+    "status": "todo",
+    "due_date": "2026-05-11",
+    "tags": "duplicate"
+  },
+  {
+    "project_id": "",
+    "task": "Missing ID",
+    "owner": "Casey",
+    "status": "todo",
+    "due_date": "2026-05-12",
+    "tags": "reject"
+  }
+]

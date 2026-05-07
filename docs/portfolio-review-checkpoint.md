@@ -1,18 +1,23 @@
 # Portfolio Review Checkpoint
 
-Status: local fixture-safe implementation ready for public-readiness audit and private push review.
+Status: public fixture-safe implementation with CI-backed public baseline.
 
-Gates still requiring explicit approval:
+## Current public state
 
-- Git push or remote mutation.
-- GitHub visibility change.
-- Release/tag/public export.
+- GitHub repo: <https://github.com/stefan-mcf/sheets-airtable-sync>
+- Visibility: public.
+- Role: Google Sheets/Airtable-style validation, dedupe, mock upsert, rejected-row reporting, and audit-log proof spoke.
+- CI workflow: `.github/workflows/ci.yml` present and latest public baseline has green CI.
+
+## Remaining gates
+
+- Release/tag/public product launch.
 - Live Google Sheets/Airtable or other provider credentials.
 - Cloud deployment.
 - Customer-owned data.
 - External buyer/operator message submission.
 
-Verification should be refreshed before any push:
+## Verification bundle
 
 ```bash
 PYTHONPATH=src python -m pytest -q

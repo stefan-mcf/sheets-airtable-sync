@@ -96,3 +96,7 @@ Live Google Sheets and Airtable work is intentionally stubbed. See `docs/live-in
 ## License
 
 MIT.
+
+## Automation Tools Catalog
+
+Part of [Stefan's automation tools catalog](https://github.com/stefan-mcf/automation-tools).

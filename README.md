@@ -6,7 +6,7 @@ Google Sheets to Airtable reconciliation service for validating, normalising, de
 
 It turns inconsistent spreadsheet and database rows into Airtable-ready upsert previews, rejected-row output, readable reports, and agent-callable control surfaces.
 
-## What it proves
+## Workflow capabilities
 
 - Buyer-shaped fixtures for CRM leads, Shopify orders, project trackers, Google Forms rows, and Notion-style rows.
 - Config-driven field mapping and merge-key rules.

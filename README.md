@@ -1,8 +1,10 @@
 # Sheets Airtable Sync
 
-Fixture-safe Google Sheets to Airtable sync proof for data-platform-sync workflows.
+Google Sheets to Airtable reconciliation service for validating, normalising, deduplicating, and planning record updates before a provider write.
 
-It shows how dirty spreadsheet/database rows become validated, normalized, deduped, Airtable-ready upsert previews with rejected-row/dead-letter output, client-readable reports, and agent-callable control surfaces.
+[Read the case study](docs/case-study.md) · [Review the architecture](docs/architecture.md) · [Run the walkthrough](docs/sandbox-walkthrough.md)
+
+It turns inconsistent spreadsheet and database rows into Airtable-ready upsert previews, rejected-row output, readable reports, and agent-callable control surfaces.
 
 ## What it proves
 
@@ -12,7 +14,7 @@ It shows how dirty spreadsheet/database rows become validated, normalized, dedup
 - Duplicate detection, reason-code taxonomy, dead-letter remediation notes, and idempotency keys.
 - CLI, FastAPI/OpenAPI, MCP tool functions, and `executor.sh` surfaces.
 - Make, Zapier, n8n, and Google Apps Script handoff templates.
-- Generated proof panels and deterministic reports.
+- Generated implementation screenshots and deterministic reports.
 
 ## Safety boundary
 
@@ -63,7 +65,7 @@ curl -fsS -X POST http://127.0.0.1:8014/sync/preview \
 
 ![Flow overview](docs/screenshots/01-flow-overview.png)
 
-![CLI proof](docs/screenshots/02-cli-proof.png)
+![CLI walkthrough](docs/screenshots/02-cli-proof.png)
 
 ![OpenAPI endpoints](docs/screenshots/03-openapi-endpoints.png)
 
@@ -96,7 +98,3 @@ Live Google Sheets and Airtable work is intentionally stubbed. See `docs/live-in
 ## License
 
 MIT.
-
-## Automation Tools Catalog
-
-Part of [Stefan's automation tools catalog](https://github.com/stefan-mcf/automation-tools).

@@ -34,7 +34,7 @@ The same reconciliation engine is available through a CLI, FastAPI endpoints, MC
 
 ## Data scenarios
 
-The repository includes six controlled datasets covering CRM leads, Shopify orders, Google Form responses, project tracking, mixed dirty rows, and Notion-style records. Four mapping configurations demonstrate how the engine adapts the same process to different operational schemas.
+The repository includes six controlled datasets covering CRM leads, Shopify orders, Google Form responses, project tracking, mixed dirty rows, and Notion-style records. Four mapping configurations show how the engine adapts the same process to different operational schemas.
 
 | Concern | Handling |
 | --- | --- |

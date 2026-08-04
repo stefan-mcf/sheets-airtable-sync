@@ -90,5 +90,5 @@ The production path is documented separately and introduces read scopes, Airtabl
 - [API surface](api.md)
 - [Platform handoff](platform-handoff.md)
 - [Live integration gate](live-integration-gate.md)
-- [Validation record](evidence.md)
+- [Validation record](validation.md)
 - [Back to the repository overview](../README.md)

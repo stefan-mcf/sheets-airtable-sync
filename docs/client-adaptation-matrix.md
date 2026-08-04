@@ -1,6 +1,6 @@
 # Client Adaptation Matrix
 
-| Buyer phrase | Proof artifact | First milestone | Gated next step |
+| Buyer phrase | Implementation artifact | First milestone | Gated next step |
 |---|---|---|---|
 | Airtable + Make | `templates/make/` | fixture scenario blueprint | import into client Make only after approval |
 | Google Sheets + GAS | `templates/gas/sheets-cleanup.gs` | cleanup trigger sample | bind to client Sheet after approval |

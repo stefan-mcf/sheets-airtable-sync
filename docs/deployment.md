@@ -1,6 +1,6 @@
 # Local Deployment
 
-Build local container proof:
+Build the local container:
 
 ```bash
 docker build -t sheets-airtable-sync .

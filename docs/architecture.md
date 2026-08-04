@@ -1,12 +1,12 @@
 # Architecture
 
-Sheets Airtable Sync is a fixture-safe data-platform-sync proof. It stays thin: synthetic spreadsheet-like inputs flow through mapping configuration, validation, normalization, dedupe, dead-letter classification, Airtable-shaped upsert previews, and deterministic reports.
+Sheets Airtable Sync is a fixture-safe data-platform reconciliation service. It stays thin: synthetic spreadsheet-like inputs flow through mapping configuration, validation, normalization, dedupe, dead-letter classification, Airtable-shaped upsert previews, and deterministic reports.
 
 ```text
-fixtures -> mapping config -> sync engine -> reports/API/MCP/executor -> proof panels
+fixtures -> mapping config -> sync engine -> reports/API/MCP/executor -> portfolio images
 ```
 
-Automation Kit remains the reusable backbone. This repo exposes a sibling-compatible optional `BackboneStatus` and never requires Automation Kit to be installed for local proof execution.
+Automation Kit remains the reusable backbone. This repository exposes a sibling-compatible optional `BackboneStatus` and never requires Automation Kit for local execution.
 
 ## Boundaries
 

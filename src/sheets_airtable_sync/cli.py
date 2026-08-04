@@ -12,7 +12,7 @@ from sheets_airtable_sync.examples import validate_examples as validate_all_exam
 from sheets_airtable_sync.reports import render_report, write_report
 from sheets_airtable_sync.sync import list_scenarios, run_scenario, sync_rows_with_mapping
 
-app = typer.Typer(help="Fixture-safe Sheets to Airtable sync proof CLI.", no_args_is_help=True)
+app = typer.Typer(help="Fixture-safe Sheets to Airtable reconciliation CLI.", no_args_is_help=True)
 
 
 def _print_json(payload: object) -> None:
@@ -36,13 +36,29 @@ def examples() -> None:
 @app.command()
 def validate(input_path: Path, mapping: Annotated[Path, typer.Option("--mapping")]) -> None:
     report = sync_rows_with_mapping(load_rows(input_path), load_mapping(mapping))
-    _print_json({"ok": report.summary_counts.rejected == 0, "summary_counts": report.summary_counts.model_dump(), "fixture_safe": True, "live_services_used": False, "synthetic_data_only": True})
+    _print_json(
+        {
+            "ok": report.summary_counts.rejected == 0,
+            "summary_counts": report.summary_counts.model_dump(),
+            "fixture_safe": True,
+            "live_services_used": False,
+            "synthetic_data_only": True,
+        }
+    )
 
 
 @app.command("plan-upserts")
 def plan_upserts(input_path: Path, mapping: Annotated[Path, typer.Option("--mapping")]) -> None:
     report = sync_rows_with_mapping(load_rows(input_path), load_mapping(mapping))
-    _print_json({"airtable_upserts": [op.model_dump(mode="json") for op in report.airtable_upserts], "summary_counts": report.summary_counts.model_dump(), "fixture_safe": True, "live_services_used": False, "synthetic_data_only": True})
+    _print_json(
+        {
+            "airtable_upserts": [op.model_dump(mode="json") for op in report.airtable_upserts],
+            "summary_counts": report.summary_counts.model_dump(),
+            "fixture_safe": True,
+            "live_services_used": False,
+            "synthetic_data_only": True,
+        }
+    )
 
 
 @app.command()
@@ -57,7 +73,14 @@ def report(
     sync_report = sync_rows_with_mapping(load_rows(input_path), load_mapping(mapping))
     if output:
         write_report(sync_report, output, format)  # type: ignore[arg-type]
-        _print_json({"written": str(output), "fixture_safe": True, "live_services_used": False, "synthetic_data_only": True})
+        _print_json(
+            {
+                "written": str(output),
+                "fixture_safe": True,
+                "live_services_used": False,
+                "synthetic_data_only": True,
+            }
+        )
     else:
         typer.echo(render_report(sync_report, format))  # type: ignore[arg-type]
 

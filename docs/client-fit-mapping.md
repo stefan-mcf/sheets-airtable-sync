@@ -1,6 +1,6 @@
 # Client Fit Mapping
 
-| Client phrase | Proof artifact | First implementation milestone | Gated next step |
+| Client phrase | Implementation artifact | First implementation milestone | Gated next step |
 |---|---|---|---|
 | Google Sheets to Airtable sync | `./executor.sh preview crm-leads` | fixture mapping + upsert preview | sandbox credentials |
 | Airtable automation cleanup | `examples/output/crm-leads-report.md` | rejected-row report | base schema review |

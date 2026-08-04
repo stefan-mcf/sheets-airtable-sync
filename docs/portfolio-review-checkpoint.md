@@ -6,7 +6,7 @@ Status: public fixture-safe implementation with CI-backed public baseline.
 
 - GitHub repo: <https://github.com/stefan-mcf/sheets-airtable-sync>
 - Visibility: public.
-- Role: Google Sheets/Airtable-style validation, dedupe, mock upsert, rejected-row reporting, and audit-log proof spoke.
+- Role: Google Sheets/Airtable-style validation, dedupe, mock upsert, rejected-row reporting, and audit-log implementation.
 - CI workflow: `.github/workflows/ci.yml` present and latest public baseline has green CI.
 
 ## Remaining gates

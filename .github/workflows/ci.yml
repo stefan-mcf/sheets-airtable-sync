@@ -28,3 +28,5 @@ jobs:
         run: python scripts/verify_examples.py
       - name: Validate executor contract
         run: ./executor.sh verify
+      - name: Audit public surface
+        run: python scripts/public_readiness_check.py

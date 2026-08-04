@@ -1,8 +1,8 @@
 # Automation Kit Backbone
 
-This repo is a concrete workflow proof, not the reusable runtime. It reports optional backbone status via `sheets_airtable_sync.backbone.get_health()`.
+This repository is a concrete workflow implementation, not the reusable runtime. It reports optional backbone status via `sheets_airtable_sync.backbone.get_health()`.
 
-The status contract intentionally mirrors sibling proof repos:
+The status contract intentionally mirrors sibling repositories:
 
 - `automation_kit_available`
 - `fixture_safe=true`

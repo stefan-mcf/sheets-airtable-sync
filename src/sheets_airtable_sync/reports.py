@@ -15,12 +15,19 @@ def report_to_json(report: SyncReport) -> str:
 def report_to_markdown(report: SyncReport) -> str:
     counts = report.summary_counts
     lines = [
-        f"# Sync Report — {report.scenario}", "",
-        "Fixture-safe local proof. No live Google Sheets or Airtable calls were made.", "",
-        "## Summary", "",
-        f"- Accepted rows: {counts.accepted}", f"- Rejected rows: {counts.rejected}",
-        f"- Duplicate rows: {counts.duplicates}", f"- Airtable upsert previews: {counts.upserts}", "",
-        "## Accepted sample", "",
+        f"# Sync Report — {report.scenario}",
+        "",
+        "Fixture-safe local run. No live Google Sheets or Airtable calls were made.",
+        "",
+        "## Summary",
+        "",
+        f"- Accepted rows: {counts.accepted}",
+        f"- Rejected rows: {counts.rejected}",
+        f"- Duplicate rows: {counts.duplicates}",
+        f"- Airtable upsert previews: {counts.upserts}",
+        "",
+        "## Accepted sample",
+        "",
     ]
     for row in report.accepted_rows[:5]:
         lines.append(f"- Row {row.row_number}: merge key `{row.merge_key}` -> {row.fields}")
@@ -44,11 +51,21 @@ def report_to_markdown(report: SyncReport) -> str:
         lines.append("- None")
     lines += ["", "## Airtable upsert preview", ""]
     for op in report.airtable_upserts[:10]:
-        lines.append(f"- `{op.record_id}` merge on {', '.join(op.merge_on_fields)} idempotency `{op.idempotency_key}`")
+        lines.append(
+            f"- `{op.record_id}` merge on {', '.join(op.merge_on_fields)} idempotency `{op.idempotency_key}`"
+        )
     lines += ["", "## Risk notes", ""]
     for note in report.risk_notes:
         lines.append(f"- {note}")
-    lines += ["", "## Live-gate next steps", "", "1. Confirm target base/table schema.", "2. Create scoped Airtable PAT/OAuth and Google auth outside this repo.", "3. Run sandbox with explicit live approval only.", ""]
+    lines += [
+        "",
+        "## Live-gate next steps",
+        "",
+        "1. Confirm target base/table schema.",
+        "2. Create scoped Airtable PAT/OAuth and Google auth outside this repo.",
+        "3. Run sandbox with explicit live approval only.",
+        "",
+    ]
     return "\n".join(lines)
 
 
@@ -65,7 +82,9 @@ def render_report(report: SyncReport, fmt: Literal["json", "md", "html"] = "md")
     return report_to_markdown(report)
 
 
-def write_report(report: SyncReport, output: str | Path, fmt: Literal["json", "md", "html"] = "md") -> Path:
+def write_report(
+    report: SyncReport, output: str | Path, fmt: Literal["json", "md", "html"] = "md"
+) -> Path:
     path = Path(output)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_report(report, fmt), encoding="utf-8")

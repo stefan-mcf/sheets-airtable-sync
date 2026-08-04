@@ -1,4 +1,4 @@
-"""Fixture-safe Sheets/Airtable sync proof package."""
+"""Fixture-safe Sheets/Airtable reconciliation package."""
 
 from sheets_airtable_sync.sync import (
     list_scenarios,

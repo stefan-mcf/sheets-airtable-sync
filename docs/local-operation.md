@@ -1,4 +1,4 @@
-# Sandbox Walkthrough
+# Local Operation
 
 1. Validate fixtures: `PYTHONPATH=src python -m sheets_airtable_sync.cli validate-examples`.
 2. Preview Airtable operations for a lane: `./executor.sh preview crm-leads`.
@@ -8,7 +8,7 @@
 
 ## Client adaptation matrix
 
-| Client request | Fixture proof | Gated next step |
+| Client request | Local scenario | Gated next step |
 |---|---|---|
 | Sheets -> Airtable | CRM leads fixture | confirm base schema |
 | Forms -> Airtable | Google form responses | confirm form fields |

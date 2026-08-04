@@ -1,4 +1,4 @@
-# Sheets Airtable Sync — Concept and Scope
+# Sheets Airtable Sync: Concept and Scope
 
 Date: 2026-05-05
 Repo: sheets-airtable-sync
@@ -6,9 +6,9 @@ Visibility: public portfolio repository
 
 ## Concept pitch
 
-Concrete proof project for spreadsheet/database automation: validate dirty rows, dedupe, normalize, create Airtable-style upserts, and produce a readable audit report.
+Concrete spreadsheet/database automation project: validate dirty rows, dedupe, normalize, create Airtable-style upserts, and produce a readable audit report.
 
-The repo proves one workflow clearly: spreadsheet chaos can become a safe repeatable sync with rejected-row reasons, idempotent upsert previews, and handoff notes for integration platforms.
+The repository presents one workflow clearly: inconsistent spreadsheet data can become a controlled repeatable sync with rejected-row reasons, idempotent upsert previews, and handoff notes for integration platforms.
 
 ## Market signals addressed
 
@@ -21,9 +21,9 @@ Source: internal market research summaries, May 2026.
 - Airtable build/automation: 273 jobs / 14%; Airtable + Make and Airtable + API requests recur in premium shortlists.
 - Automation fix/debug: 119 jobs in the 168h mining report; strong early-review target because users are already in pain.
 - GHL/HubSpot/CRM cluster: 279 jobs / 9.9% in the 168h mining report; high-volume wedge, even if average rates are lower.
-- Slack/Discord bots: lower volume but high median niche; useful as an ops-notification proof surface.
+- Slack/Discord bots: lower volume but high median niche; useful as an ops-notification integration surface.
 
-Portfolio rule: each repo proves one buyer-legible outcome. Automation Kit remains the reusable local proof framework for running and validating automation patterns; this repository shows a concrete project implementation that can be evaluated on its own.
+Portfolio rule: each repository presents one buyer-legible outcome. Automation Kit remains the reusable local framework for running and validating automation patterns; this repository shows a concrete implementation that can be evaluated on its own.
 
 ## Systems and workflows this repo makes visible
 
@@ -36,24 +36,24 @@ Portfolio rule: each repo proves one buyer-legible outcome. Automation Kit remai
 - Google Ads/Meta Ads-style CSVs
 - CRM rows
 
-## Concrete proof flows
+## Implemented flows
 
 - Dirty lead rows -> accepted/rejected report -> Airtable-style upserts
 - Shopify/ads export rows -> normalized reporting table
 - Client/project tracker rows -> deduped operations table
 
-## Evidence package
+## Validation package
 
-The implemented proof package includes:
+The implementation includes:
 
 - sample input fixtures;
 - deterministic local runs;
 - structured output JSON/CSV/reports;
-- validation and audit-log evidence;
+- validation results and audit logs;
 - operator-readable handoff notes;
-- README with problem, solution, proof, and safety boundary;
-- generated proof-panel screenshots;
-- tests and validators that prove repeatability.
+- README with problem, solution, implementation, and safety boundary;
+- generated portfolio screenshots;
+- tests and validators that confirm repeatability.
 
 ## Client-fit use
 
@@ -75,16 +75,16 @@ Representative first milestone:
 ## Relationship to Automation Kit
 
 - Automation Kit remains the reusable pattern library and local validation framework.
-- This repo is a focused implementation/proof wrapper.
+- This repository is a focused implementation module.
 - It reuses Automation Kit-style vocabulary: workflow contract, fixtures, mock adapters, validation result, audit log, and handoff note.
-- Companion proof repositories keep each portfolio link focused instead of overloading the reusable framework.
+- Companion repositories keep each portfolio link focused instead of overloading the reusable framework.
 
 ## Safety and scope boundaries
 
-- Synthetic fixtures only in the committed proof package.
+- Synthetic fixtures only in the committed implementation.
 - Empty credential placeholders only.
-- No live third-party service calls in the proof baseline.
-- No customer-owned data in examples or evidence.
+- No live third-party service calls in the local baseline.
+- No customer-owned data in examples or generated output.
 - No external message, platform submission, or off-repo delivery action.
 - No cloud deployment, paid resource, or production-readiness claim.
-- Evidence is deterministic: sample input, sample output, validation log, test output, and handoff notes.
+- Validation is deterministic: sample input, sample output, validation log, test output, and handoff notes.

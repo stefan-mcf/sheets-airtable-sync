@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sheets-airtable-sync"
 version = "0.2.0"
-description = "Fixture-safe Google Sheets to Airtable validation, dedupe, report, API, MCP, and mock upsert proof"
+description = "Fixture-safe Google Sheets to Airtable validation, dedupe, reporting, API, MCP, and mock upsert planning"
 requires-python = ">=3.11"
 license = "MIT"
 readme = "README.md"

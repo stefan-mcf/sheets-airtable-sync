@@ -40,6 +40,7 @@ PY
     python -m pytest -q
     python -m ruff check .
     python -m mypy src
+    python scripts/public_readiness_check.py
     python -m json.tool repo-metadata.json >/dev/null
     echo '{"ok":true,"verified":true,"fixture_safe":true,"live_services_used":false}'
     ;;

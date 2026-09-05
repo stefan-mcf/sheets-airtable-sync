@@ -6,6 +6,8 @@ Google Sheets to Airtable reconciliation service for validating, normalising, de
 
 ## Overview
 
+**Role:** reconciliation design, normalisation, validation, CLI/API interfaces and operating reports. **Status:** an SM Systems reference implementation; the included scenarios produce local upsert previews.
+
 The service turns inconsistent spreadsheet rows into Airtable-ready upsert previews, rejected-row output, readable reports, and operator-accessible interfaces. It is designed for teams that need predictable data cleanup and a controlled handoff before changing a live base.
 
 ## Capabilities

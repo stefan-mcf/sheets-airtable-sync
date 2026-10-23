@@ -25,6 +25,7 @@ dev = [
   "uvicorn>=0.29.0",
 ]
 api = ["fastapi>=0.110.0", "uvicorn>=0.29.0", "httpx>=0.27.0"]
+mcp = ["mcp>=2.0.0,<3"]
 screenshots = ["pillow>=9.0.0"]
 
 [project.scripts]

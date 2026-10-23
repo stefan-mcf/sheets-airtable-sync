@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any, Literal, cast
 
 from sheets_airtable_sync.backbone import get_health
@@ -16,13 +17,21 @@ def list_sheets_airtable_scenarios() -> list[dict[str, str]]:
     return list_scenarios()
 
 
+def _fixture_path(value: str, directory: str) -> Path:
+    allowed = (ROOT / directory).resolve()
+    candidate = (ROOT / value).resolve()
+    if not candidate.is_relative_to(allowed) or not candidate.is_file():
+        raise ValueError("MCP inputs must be bundled files in " + directory)
+    return candidate
+
+
 def validate_sheets_airtable_rows(input_path: str, mapping_path: str) -> dict[str, Any]:
-    report = sync_rows_with_mapping(load_rows(ROOT / input_path), load_mapping(ROOT / mapping_path))
+    report = sync_rows_with_mapping(load_rows(_fixture_path(input_path, "examples/input")), load_mapping(_fixture_path(mapping_path, "configs/mappings")))
     return {"ok": report.summary_counts.rejected == 0, "summary_counts": report.summary_counts.model_dump(), "fixture_safe": True, "live_services_used": False, "synthetic_data_only": True}
 
 
 def plan_airtable_upserts(input_path: str, mapping_path: str) -> dict[str, Any]:
-    report = sync_rows_with_mapping(load_rows(ROOT / input_path), load_mapping(ROOT / mapping_path))
+    report = sync_rows_with_mapping(load_rows(_fixture_path(input_path, "examples/input")), load_mapping(_fixture_path(mapping_path, "configs/mappings")))
     return {"airtable_upserts": [op.model_dump(mode="json") for op in report.airtable_upserts], "summary_counts": report.summary_counts.model_dump(), "fixture_safe": True, "live_services_used": False, "synthetic_data_only": True}
 
 
@@ -35,10 +44,10 @@ def render_sync_report(scenario: str, format: str = "md") -> dict[str, Any]:
 
 def build_mcp_server() -> Any:
     try:
-        from mcp.server.fastmcp import FastMCP
-    except Exception:
+        from mcp.server import MCPServer
+    except ImportError:
         return None
-    mcp = FastMCP("sheets-airtable-sync")
+    mcp = MCPServer("sheets-airtable-sync")
     mcp.tool()(get_sheets_airtable_health)
     mcp.tool()(list_sheets_airtable_scenarios)
     mcp.tool()(validate_sheets_airtable_rows)
@@ -48,3 +57,9 @@ def build_mcp_server() -> Any:
 
 
 mcp = build_mcp_server()
+
+
+if __name__ == "__main__":
+    if mcp is None:
+        raise RuntimeError("Install the mcp extra to run the stdio server")
+    mcp.run()

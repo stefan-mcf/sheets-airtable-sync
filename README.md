@@ -8,9 +8,15 @@ Google Sheets to Airtable reconciliation service for validating, normalising, de
 
 [Case study](docs/case-study.md) | [Architecture](docs/architecture.md) | [Local operation](docs/local-operation.md)
 
-![Generated local processing example](docs/screenshots/03-core-processing.png)
+## Three spreadsheet rows produce one proposed update
 
-*Generated panel from synthetic local scenarios. Further views are in the [image index](docs/screenshots/README.md); recorded totals are separate from current CI.*
+The [dirty-rows fixture](examples/input/dirty-rows.json) contains a valid contact, a duplicate and a row without an email. The local report separates the three outcomes and prepares one Airtable upsert preview. After [setup](#usage), run:
+
+```bash
+PYTHONPATH=src python -m sheets_airtable_sync.cli run-scenario dirty-rows --format md
+```
+
+The [reconciliation test](tests/test_sync.py) checks one accepted row, one duplicate, one rejection and one proposed update.
 
 ## How it works
 
@@ -70,6 +76,6 @@ Live Google Sheets and Airtable operation requires separately approved credentia
 - [Executor contract](docs/executor.md)
 - [Platform handoff](docs/platform-handoff.md)
 - [Live integration gate](docs/live-integration-gate.md)
-- [Image index](docs/screenshots/README.md)
+- [Historical generated panels](docs/screenshots/README.md)
 
 MIT. See [LICENSE](LICENSE).
